@@ -14,4 +14,7 @@
 @property (strong, nonatomic) NSString *associatedObject_retain;
 @property (copy,   nonatomic) NSString *associatedObject_copy;
 
++ (NSString *)associatedObject;
++ (void)setAssociatedObject:(NSString *)associatedObject;
+
 @end

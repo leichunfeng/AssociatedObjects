@@ -25,7 +25,6 @@ __weak NSString *string_weak_copy   = nil;
     string_weak_assign = self.associatedObject_assign;
     string_weak_retain = self.associatedObject_retain;
     string_weak_copy   = self.associatedObject_copy;
-    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

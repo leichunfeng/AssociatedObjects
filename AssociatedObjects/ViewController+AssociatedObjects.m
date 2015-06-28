@@ -11,6 +11,8 @@
 
 @implementation ViewController (AssociatedObjects)
 
+#pragma mark - ViewController Object Associated Objects
+
 - (NSString *)associatedObject_assign {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -33,6 +35,16 @@
 
 - (void)setAssociatedObject_copy:(NSString *)associatedObject_copy {
     objc_setAssociatedObject(self, @selector(associatedObject_copy), associatedObject_copy, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+#pragma mark - ViewController Class Associated Objects
+
++ (NSString *)associatedObject {
+    return objc_getAssociatedObject([self class], _cmd);
+}
+
++ (void)setAssociatedObject:(NSString *)associatedObject {
+    objc_setAssociatedObject([self class], @selector(associatedObject), associatedObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
